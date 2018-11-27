@@ -29,7 +29,8 @@ import {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      backButtonText: 'Volver'})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
