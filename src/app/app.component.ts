@@ -1,7 +1,7 @@
 import { Ajustes2Page } from './../pages/ajustes2/ajustes2';
 
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -18,7 +18,8 @@ export class MyApp {
 
   rootPage: any = TabsPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
+    private menuCtrl: MenuController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -29,6 +30,7 @@ export class MyApp {
 
   public abrirPagina($event, pagina: Page): void {
     this.rootPage = pagina;
+    this.menuCtrl.close();
   }
 
 }
